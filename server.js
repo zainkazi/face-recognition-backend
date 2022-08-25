@@ -110,6 +110,6 @@ app.put("/image", (req, res) => {
     .catch((err) => res.status(400).json("error getting entries"));
 });
 
-app.listen(3001, () => {
-  console.log("Listening on port 3001...");
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });
