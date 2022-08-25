@@ -19,7 +19,7 @@ app.use(cors());
 const saltRounds = 10;
 
 app.get("/", (req, res) => {
-  res.json(database.users);
+  res.send("<h1>Welcome to Face Recognition App</h1>");
 });
 
 app.post("/signin", (req, res) => {
