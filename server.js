@@ -5,7 +5,8 @@ const app = express();
 const knex = require("knex")({
   client: "pg",
   connection: {
-    connectionString: process.env.DATABASE_URL,
+    connectionString:
+      "postgresql://postgres:xQembDNt7oEeOgXiOfF4@containers-us-west-182.railway.app:5574/railway",
     ssl: {
       rejectUnauthorized: false,
     },
@@ -109,6 +110,8 @@ app.put("/image", (req, res) => {
     .catch((err) => res.status(400).json("error getting entries"));
 });
 
-app.listen(process.env.PORT || 3001, () => {
-  console.log(`Listening on port ${process.env.PORT}`);
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
